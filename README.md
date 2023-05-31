@@ -1,0 +1,2 @@
+# cfg
+Configs for Linux
