@@ -1,0 +1,25 @@
+[weather]
+command=echo "󰖐 $(curl 'wttr.in/Belfast?format=%t')"
+interval=60
+
+[time]
+command=echo " $(date +%I:%m)"
+interval=20
+
+[ram]
+command=echo " $(free -h | grep -o '[0-9]*\.[0-9]*[a-zA-Z]*' | awk 'NR==2')"
+interval=1
+
+[cpu]
+command=echo "󰓅 `LC_ALL=C top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}'`%"
+interval=2
+
+[battery]
+command=/home/harv/.config/i3blocks/battery
+interval=3
+
+[suspend]
+full_text= ⏻ 
+command=systemctl suspend
+
+
